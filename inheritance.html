@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inheritance</title>
+</head>
+<body>
+<h1 id="demo"></h1>
+
+<br>
+
+<h1 id="demo1"></h1>
+
+<br>
+
+<h1 id="demo2"></h1>
+
+<script type="text/javascript">
+//parent class
+
+class person
+{
+constructor(name,age,eyecolor,height,weight,haircolor)
+{
+this.name = name;
+this.age = age;
+this.eyecolor = eyecolor;
+this.height = height;
+this.weight = weight;
+this.haircolor = haircolor;
+}
+presence()
+{
+return ' The name of person is '  + this.name + ' Age is ' + this.age + ' Eyecolor is ' + this.eyecolor + ' Height is ' + this.height + ' Weight is ' + this.weight + ' Haircolor is ' + this.haircolor ;
+}
+}
+//child class
+
+class student extends person
+{
+constructor(name,age,eyecolor,height,weight,haircolor,usn,colleg,branch)
+{
+super(name,age,eyecolor,height,weight,haircolor);
+this.usn = usn;
+this.colleg = colleg;
+this.branch = branch;
+}
+show()
+{
+return this.presence() + ',The USN of the student is ' + this.usn +  ' Colleg is ' + this.colleg + ' Branch is ' + this.branch ;
+}
+}
+
+let mystud = new student("Abdul Rehman","23","black","5.9ft","60","Black","M1813801","Secab","BCA" );
+document.getElementById("demo").innerHTML = mystud.show();
+
+
+let mystud1 = new student("Airaf","22","black","6ft","65","Black","M1813802","Darbar","B.com");
+document.getElementById("demo1").innerHTML = mystud1.show();
+
+let mystud2 = new student("xabi","23","black","6ft","60","Black","M1813828","Secab","BCA");
+document.getElementById("demo2").innerHTML = mystud2.show();
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inheritance</title>
+</head>
+<body>
+<h1 id="demo"></h1>
+<br>
+<h1 id="demo1"></h1>
+<br>
+<h1 id="demo2"></h1>
+
+
+<script type="text/javascript">
+//parent class
+
+class company
+{
+constructor(company,name,model,color,price)
+{
+this.company = company;
+this.name = name;
+this.model = model;
+this.color = color;
+this.price = price;
+}
+presence()
+{
+return ' The name of company is '  + this.company + ' name is ' + this.name + ' model is ' + this.model + '  color is ' + this. color  + ' price is ' + this.price ;
+}
+}
+//child class 
+
+class car extends company
+{
+constructor(company,name,model,color,price,cc,fuel)
+{
+super(company,name,model,color,price);
+this.cc = cc ;
+this.fuel = fuel ;
+}
+show()
+{
+return this.presence() + ',The cc of the car is ' + this.cc +  ' fuel is ' + this.fuel ;
+}
+}
+
+let mycar = new car ("BMW","bmw","X7","Red","1.5CR","500","patrol");
+document.getElementById("demo").innerHTML = mycar.show();
+
+let mycar1 = new car ("sokoda","sokoda","X1","Red","1.5CR","500","patrol");
+document.getElementById("demo1").innerHTML = mycar1.show();
+
+
+let mycar2 = new car ("volo","volo","X","Red","1.5CR","300","patrol");
+document.getElementById("demo2").innerHTML = mycar2.show();
+
+
+
+
+
+</script>
+</body>
+</html>
